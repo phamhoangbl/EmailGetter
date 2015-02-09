@@ -1,0 +1,13 @@
+C:\Users\johnhoang\documents\visual studio 2013\Projects\EmailGetter\EmailGetter.Core\bin\Debug\EmailGetter.Core.dll
+C:\Users\johnhoang\documents\visual studio 2013\Projects\EmailGetter\EmailGetter.Core\bin\Debug\EmailGetter.Core.pdb
+C:\Users\johnhoang\documents\visual studio 2013\Projects\EmailGetter\EmailGetter.Core\obj\Debug\EmailGetter.Core.csprojResolveAssemblyReference.cache
+C:\Users\johnhoang\documents\visual studio 2013\Projects\EmailGetter\EmailGetter.Core\obj\Debug\EmailGetter.Core.dll
+C:\Users\johnhoang\documents\visual studio 2013\Projects\EmailGetter\EmailGetter.Core\obj\Debug\EmailGetter.Core.pdb
+C:\Users\johnhoang\documents\visual studio 2013\Projects\EmailGetter\EmailGetter.Core\bin\Debug\HtmlAgilityPack.dll
+C:\Users\johnhoang\documents\visual studio 2013\Projects\EmailGetter\EmailGetter.Core\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\johnhoang\documents\visual studio 2013\Projects\EmailGetter\EmailGetter.Core\bin\Debug\HtmlAgilityPack.xml
+C:\Users\johnhoang\documents\visual studio 2013\Projects\EmailGetter\EmailGetter.Core\bin\Debug\EmailGetter.Core.dll.config
+C:\Users\johnhoang\documents\visual studio 2013\Projects\EmailGetter\EmailGetter.Core\bin\Debug\EntityFramework.dll
+C:\Users\johnhoang\documents\visual studio 2013\Projects\EmailGetter\EmailGetter.Core\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\johnhoang\documents\visual studio 2013\Projects\EmailGetter\EmailGetter.Core\bin\Debug\EntityFramework.xml
+C:\Users\johnhoang\documents\visual studio 2013\Projects\EmailGetter\EmailGetter.Core\bin\Debug\EntityFramework.SqlServer.xml
