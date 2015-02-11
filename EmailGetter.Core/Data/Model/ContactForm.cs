@@ -25,5 +25,7 @@ namespace EmailGetter.Core.Data.Model
         public string CommentOrQuestion { set; get; }
         public DateTime SentDate { set; get; }
         public string MessageId { set; get; }
+        public string Status { set; get; }
+        public bool IsProcessed { set; get; }
     }
 }

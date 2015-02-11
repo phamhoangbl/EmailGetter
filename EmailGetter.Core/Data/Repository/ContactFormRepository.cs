@@ -21,6 +21,11 @@ namespace EmailGetter.Core.Data.Repository
             return db.ContactForm.ToList();
         }
 
+        public ContactForm Select(string messageId)
+        {
+            return db.ContactForm.Where(x => x.MessageId == messageId).FirstOrDefault();
+        }
+
         public void Insert(ContactForm obj, out int contactFormId)
         {
             var a = db.ContactForm.Add(obj);

@@ -11,3 +11,15 @@ C:\Users\johnhoang\documents\visual studio 2013\Projects\EmailGetter\EmailGetter
 C:\Users\johnhoang\documents\visual studio 2013\Projects\EmailGetter\EmailGetter.Core\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\johnhoang\documents\visual studio 2013\Projects\EmailGetter\EmailGetter.Core\bin\Debug\EntityFramework.xml
 C:\Users\johnhoang\documents\visual studio 2013\Projects\EmailGetter\EmailGetter.Core\bin\Debug\EntityFramework.SqlServer.xml
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Debug\EmailGetter.Core.dll.config
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Debug\EmailGetter.Core.dll
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Debug\EmailGetter.Core.pdb
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Debug\EntityFramework.dll
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Debug\EntityFramework.SqlServer.dll
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Debug\HtmlAgilityPack.dll
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Debug\EntityFramework.xml
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Debug\EntityFramework.SqlServer.xml
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Debug\HtmlAgilityPack.pdb
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Debug\HtmlAgilityPack.xml
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\obj\Debug\EmailGetter.Core.dll
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\obj\Debug\EmailGetter.Core.pdb

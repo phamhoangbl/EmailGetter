@@ -1,0 +1,12 @@
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Release\EmailGetter.Core.dll.config
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Release\EmailGetter.Core.dll
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Release\EmailGetter.Core.pdb
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Release\EntityFramework.dll
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Release\EntityFramework.SqlServer.dll
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Release\HtmlAgilityPack.dll
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Release\EntityFramework.xml
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Release\EntityFramework.SqlServer.xml
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Release\HtmlAgilityPack.pdb
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Release\HtmlAgilityPack.xml
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\obj\Release\EmailGetter.Core.dll
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\obj\Release\EmailGetter.Core.pdb
