@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using OpaqueMail.Net;
 using System.Configuration;
 using EmailGetter.Core;
 using EmailGetter.Core.Utils;
@@ -16,6 +15,8 @@ using System.Net;
 using CommandLine;
 using CommandLine.Text;
 using System.Diagnostics;
+using OpenPop.Pop3;
+using OpenPop.Mime;
 
 namespace EmailGetter
 {
@@ -48,8 +49,17 @@ namespace EmailGetter
 
         private static void Run(Options options)
         {
+            _logger.Info("==========Start Program==============");
+            Console.WriteLine("==========Start Program==============");
             _timeToRefesh = options.TimeToRefesh;
-            if (options.FilePathDTS == "d")
+
+            //if do not configure Time and File Path, set them to default then
+            if(options.TimeToRefesh == 0 || options.FilePathDTS == null)
+            {
+                _timeToRefesh = 900000;
+                _directoryDTS = directoryDTS;
+            }
+            else if (options.FilePathDTS == "d")
             {
                 _directoryDTS = directoryDTS;
             }
@@ -72,35 +82,49 @@ namespace EmailGetter
             }
             catch(Exception ex)
             {
-                Console.WriteLine(string.Format("There is an exception error: {0}", ex.InnerException));
-                _logger.Error("There is an exception error", ex);
+                Console.WriteLine(string.Format("There is an exception error: {0}", ex));
+                _logger.Error(string.Format("There is an exception error {0}", ex));
             }
         }
 
 
         private static void CheckAndStoreEmailContactForm()
         {
-            List<MailMessage> recentMessages = new List<MailMessage>();
+            List<Message> recentMessages = new List<Message>();
             var contactRepo = new ContactFormRepository();
 
             try
             {
-                Pop3Client pop3Client = new Pop3Client(host, 110, emailUser, emailPassword, false);
-                pop3Client.Connect();
-                pop3Client.Authenticate();
-                recentMessages = pop3Client.GetMessages(numberEmailFetch, 1, false, false);
+                _logger.Info(string.Format("{0}: Start retrieving email", DateTime.Now.ToString("h:mm:ss")));
+                Console.WriteLine(string.Format("{0}: Start retrieving email", DateTime.Now.ToString("h:mm:ss")));
+
+                Pop3Client pop3Client = new Pop3Client();
+                pop3Client.Connect(host, 110, false);
+                pop3Client.Authenticate(emailUser, emailPassword);
+
+                for (int i = 1; i <= pop3Client.GetMessageCount(); i++)
+                {
+                    var message = pop3Client.GetMessage(i);
+                    recentMessages.Add(message);
+                }
+
+                pop3Client.Disconnect();
+                pop3Client.Dispose();
+
+                _logger.Info(string.Format("{0}: End retrieving email", DateTime.Now.ToString("h:mm:ss")));
+                Console.WriteLine(string.Format("{0}: End retrieving email", DateTime.Now.ToString("h:mm:ss")));
             }
             catch (Exception ex)
             {
                 throw ex;
             }
 
-            var contactFormMessage = recentMessages.Where(x => x.Subject.Contains(emailTitle));
+            var contactFormMessages = recentMessages.Where(x => x.Headers.Subject.Contains(emailTitle));
 
-
-            List<string> storedEmail = new List<string>();
-            foreach (var message in contactFormMessage)
+            foreach (var contactFormMessage in contactFormMessages)
             {
+                var message = contactFormMessage.ToMailMessage();
+
                 var contact = EmailTextReader.ReadContactFrom(message.Body);
 
                 //Store contact from into database
@@ -119,61 +143,63 @@ namespace EmailGetter
                 contactForm.PrimaryJobFunction = WebUtility.HtmlDecode(contact.PrimaryJobFunction);
                 contactForm.State = WebUtility.HtmlDecode(contact.State);
                 contactForm.Zip = WebUtility.HtmlDecode(contact.Zip);
-                contactForm.SentDate = message.Date;
-                contactForm.MessageId = message.MessageId;
+                contactForm.SentDate = contactFormMessage.Headers.DateSent;
+                contactForm.MessageId = contactFormMessage.Headers.MessageId;
                 contactForm.Status = "Open";
                 contactForm.IsProcessed = false;
 
-                if (!contactRepo.HasAlready(message.MessageId))
+                if (!contactRepo.HasAlready(contactForm.MessageId))
                 {
-                    try 
+                    try
                     {
                         contactRepo.Insert(contactForm);
-                        storedEmail.Add(contactForm.MessageId);
+                        contactRepo.Save();
 
                         Console.WriteLine("Store Contact into database successfully");
                         _logger.Info("Store Contact into database successfully");
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         throw ex;
                     }
                 }
             }
 
-            if (storedEmail.Any())
+            //get contact forms is not processed yet
+            var unProcessedEmail = contactRepo.Select(false);
+            if (unProcessedEmail.Any())
             {
                 Console.WriteLine("Begin call Console App exe");
                 _logger.Info("Begin call Console App exe");
 
-                Console.WriteLine("{0}: There is {1} entry(ies) to process", DateTime.Now.ToString("h:mm:ss"), storedEmail.Count);
-                _logger.Info("{0}: There is {1} entry(ies) to process", DateTime.Now.ToString("h:mm:ss"), storedEmail.Count);
+                Console.WriteLine(string.Format("{0}: There is {1} entry(ies) to process", DateTime.Now.ToString("h:mm:ss"), unProcessedEmail.Count()));
+                _logger.Info(string.Format("{0}: There is {1} entry(ies) to process", DateTime.Now.ToString("h:mm:ss"), unProcessedEmail.Count()));
 
                 //Execute DTS SSIS
                 try
                 {
                     CallDTSApp();
+
+                    //Update IsProcessed
+                    foreach (var email in unProcessedEmail)
+                    {
+                        var contactForm = contactRepo.Select(email.MessageId);
+                        contactForm.IsProcessed = true;
+                    }
+                    contactRepo.Save();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     throw ex;
                 }
-
-                //Update IsProcessed
-                foreach(var email in storedEmail)
-                {
-                    var contactForm = contactRepo.Select(email);
-                    contactForm.IsProcessed = true;
-                }
-                contactRepo.Save();
 
                 Console.WriteLine("Done call Console App exe");
                 _logger.Info("Done call Console App exe");
             }
             else
             {
-                Console.WriteLine("{0}: There is no entry to process", DateTime.Now.ToString("h:mm:ss"));
-                _logger.Info("{0}: There is no entry to process", DateTime.Now.ToString("h:mm:ss"));
+                Console.WriteLine(string.Format("{0}: There is no entry to process", DateTime.Now.ToString("h:mm:ss")));
+                _logger.Info(string.Format("{0}: There is no entry to process", DateTime.Now.ToString("h:mm:ss")));
             }
         }
 
@@ -184,13 +210,16 @@ namespace EmailGetter
             startinfo.CreateNoWindow = true;
             startinfo.WindowStyle = ProcessWindowStyle.Hidden;
 
-            string dirSPImport = AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug", "") + @"SPImport\";
+            //string dirSPImport = AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug", "") + @"SPImport\";
+            string dirSPImport = AppDomain.CurrentDomain.BaseDirectory + @"SPImport\";
             startinfo.FileName = string.Format("{0}", _directoryDTS + _commandDTS);
             startinfo.Arguments =  " /f " + dirSPImport + _fileDTS;
             startinfo.RedirectStandardOutput = true;
 
             Process p = Process.Start(startinfo);
-            p.WaitForExit();
+
+            //To make sure Import Sharepoint success.
+            Thread.Sleep(30000);
         }
     }
 }

@@ -1,0 +1,1093 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/9/2015 1:35:50 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="JOHNHOANG-PC"
+  DTS:CreatorName="johnhoang-PC\johnhoang"
+  DTS:DTSID="{70B9B4E0-6E5E-4958-9D81-219A3195DED4}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.3436.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{BF5CE8A8-1492-4133-B48B-CA18CCD8B672}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PRDVTSQL00.VtExtranet.theXTeam]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{97CC4A98-95DE-41FA-957C-B18538B975CB}"
+      DTS:ObjectName="PRDVTSQL00.VtExtranet.theXTeam">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=PRDVTSQL00;User ID=theXTeam;Initial Catalog=VtExtranet;Persist Security Info=True;Application Name=SSIS-Package-{97CC4A98-95DE-41FA-957C-B18538B975CB}PRDVTSQL00.VtExtranet.theXTeam;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfRG+Se2V8UiobbWpeL9f9wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACDW6K20KBZt70eKClFR5zZAwcRsGbAuk20ZAECpxEPmgAAAAAOgAAAAAIAACAAAABejrgQop1QUbe/QBfI9Brs8OSsV+naYgelm+/+i61CJiAAAAD5xnJFcddnm0KqtmFuJiZpCTU8trtA3ovxMMGsVbv32EAAAADiuarbUTBdQRWa0lKcIdCpyJDTrs/mduF1Cn80Je6k9qbZoQ+kIS5YTKFG4nsNafMWi2btufqMykpziLIi04R0</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SharePoint Credential]"
+      DTS:CreationName="SPCRED"
+      DTS:DTSID="{217755F5-E483-4EEE-A1B1-F2CC5F6206C7}"
+      DTS:ObjectName="SharePoint Credential">
+      <DTS:ObjectData>
+        <SPConnectionManager />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1E972745-7858-4A4B-B182-3DB80E5A394C}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\ADO NET Source"
+              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="ADO NET Source"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT     ContactFormId, FirstName, LastName, CompanyEmail, City, State, Zip, Country, Email, Phone, CompanyName, CompanyType, PositionTitle, PrimaryJobFunction, 
+                      CommentOrQuestion, SentDate, MessageId, Status, IsProcessed
+FROM         ContactForms
+WHERE     (IsProcessed = 0)</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version= 11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">"dbo"."ContactForms"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter, Microsoft.SqlServer.ADONETSrc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter, Microsoft.SqlServer.ADONETSrc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\ADO NET Source.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[PRDVTSQL00.VtExtranet.theXTeam]"
+                  connectionManagerRefId="Package.ConnectionManagers[PRDVTSQL00.VtExtranet.theXTeam]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[ContactFormId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ContactFormId]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[ContactFormId]"
+                      name="ContactFormId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[FirstName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[FirstName]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[LastName]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[CompanyEmail]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[CompanyEmail]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[CompanyEmail]"
+                      name="CompanyEmail"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[City]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[State]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[State]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[Zip]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Zip]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[Zip]"
+                      name="Zip"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[Country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Country]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[Email]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Email]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[Email]"
+                      name="Email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[Phone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Phone]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[Phone]"
+                      name="Phone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[CompanyName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[CompanyName]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[CompanyName]"
+                      name="CompanyName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[CompanyType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[CompanyType]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[CompanyType]"
+                      name="CompanyType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[PositionTitle]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[PositionTitle]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[PositionTitle]"
+                      name="PositionTitle"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[PrimaryJobFunction]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[PrimaryJobFunction]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[PrimaryJobFunction]"
+                      name="PrimaryJobFunction"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[CommentOrQuestion]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[CommentOrQuestion]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[CommentOrQuestion]"
+                      name="CommentOrQuestion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[SentDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[SentDate]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[SentDate]"
+                      name="SentDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[MessageId]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MessageId]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[MessageId]"
+                      name="MessageId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[Status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Status]"
+                      length="15"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[Status]"
+                      name="Status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[IsProcessed]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[IsProcessed]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[IsProcessed]"
+                      name="IsProcessed"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[ContactFormId]"
+                      dataType="i4"
+                      name="ContactFormId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="255"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="255"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[CompanyEmail]"
+                      dataType="wstr"
+                      length="255"
+                      name="CompanyEmail" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="255"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[State]"
+                      dataType="wstr"
+                      length="255"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Zip]"
+                      dataType="wstr"
+                      length="255"
+                      name="Zip" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="255"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="255"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Phone]"
+                      dataType="wstr"
+                      length="255"
+                      name="Phone" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[CompanyName]"
+                      dataType="wstr"
+                      length="255"
+                      name="CompanyName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[CompanyType]"
+                      dataType="wstr"
+                      length="255"
+                      name="CompanyType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[PositionTitle]"
+                      dataType="wstr"
+                      length="255"
+                      name="PositionTitle" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[PrimaryJobFunction]"
+                      dataType="wstr"
+                      length="255"
+                      name="PrimaryJobFunction" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[CommentOrQuestion]"
+                      dataType="nText"
+                      name="CommentOrQuestion" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[SentDate]"
+                      dataType="dbTimeStamp"
+                      name="SentDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MessageId]"
+                      dataType="wstr"
+                      length="255"
+                      name="MessageId" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Status]"
+                      dataType="wstr"
+                      length="15"
+                      name="Status" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[IsProcessed]"
+                      dataType="bool"
+                      name="IsProcessed" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ContactFormId]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ContactFormId]"
+                      name="ContactFormId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[FirstName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[LastName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[LastName]"
+                      name="LastName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[CompanyEmail]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[CompanyEmail]"
+                      name="CompanyEmail" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[City]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[State]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[State]"
+                      name="State" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Zip]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Zip]"
+                      name="Zip" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Country]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Country]"
+                      name="Country" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Email]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Email]"
+                      name="Email" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Phone]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Phone]"
+                      name="Phone" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[CompanyName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[CompanyName]"
+                      name="CompanyName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[CompanyType]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[CompanyType]"
+                      name="CompanyType" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[PositionTitle]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[PositionTitle]"
+                      name="PositionTitle" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[PrimaryJobFunction]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[PrimaryJobFunction]"
+                      name="PrimaryJobFunction" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[CommentOrQuestion]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[CommentOrQuestion]"
+                      name="CommentOrQuestion" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[SentDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[SentDate]"
+                      name="SentDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MessageId]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MessageId]"
+                      name="MessageId" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Status]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Status]"
+                      name="Status" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[IsProcessed]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[IsProcessed]"
+                      name="IsProcessed" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\SharePoint List Destination"
+              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              description="Add, update, or delete data in SharePoint lists"
+              name="SharePoint List Destination">
+              <properties>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.Samples.SqlServer.SSIS.SharePointListAdapters.SharePointListDestination, SharePointListAdapters, Version=1.2012.0.0, Culture=neutral, PublicKeyToken=f4b3011e1ece9d47</property>
+                <property
+                  dataType="System.String"
+                  description="Path to SharePoint site that contains the list."
+                  expressionType="Notify"
+                  name="SiteUrl">http://flash/sales/Private/</property>
+                <property
+                  dataType="System.String"
+                  description="Name of the SharePoint list to load data from."
+                  expressionType="Notify"
+                  name="SiteListName">Inquiries</property>
+                <property
+                  dataType="System.String"
+                  description="Name of the view within SharePoint list to load data from."
+                  expressionType="Notify"
+                  name="SiteListViewName">Inquiries View</property>
+                <property
+                  dataType="System.String"
+                  description="Culture to use when communicating with remote SharePoint Server (en-US)."
+                  expressionType="Notify"
+                  name="SharePointCulture">en-US</property>
+                <property
+                  dataType="System.Int16"
+                  description="# of elements to pull from the Webservice at a time."
+                  name="BatchSize"
+                  typeConverter="System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">200</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determine if the destination rows are Modifications (udpates and inserts), or Deletions.  Updates and Deletes must have an ID Column with the SharePoint ID. "
+                  name="BatchType"
+                  typeConverter="Microsoft.Samples.SqlServer.SSIS.SharePointListAdapters.Enums.BatchType, SharePointListAdapters, Version=1.2012.0.0, Culture=neutral, PublicKeyToken=f4b3011e1ece9d47">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Whether to use a connection manager for this component"
+                  name="UseConnectionManager"
+                  typeConverter="Microsoft.Samples.SqlServer.SSIS.SharePointListAdapters.Enums.TrueFalseValue, SharePointListAdapters, Version=1.2012.0.0, Culture=neutral, PublicKeyToken=f4b3011e1ece9d47">1</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\SharePoint List Destination.Connections[SharePoint Credential Connection]"
+                  connectionManagerID="Package.ConnectionManagers[SharePoint Credential]"
+                  connectionManagerRefId="Package.ConnectionManagers[SharePoint Credential]"
+                  name="SharePoint Credential Connection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input]"
+                  description="Inquiries"
+                  hasSideEffects="true"
+                  name="Component Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[ContactFormId]"
+                      cachedDataType="i4"
+                      cachedName="ContactFormId"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[ContactFormId]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[First Name]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Last Name]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[CompanyEmail]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CompanyEmail"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Company Mailing Address]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[CompanyEmail]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[State]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="State"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[State]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[State]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[Zip]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Zip"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Zip]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[Zip]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Country]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[Email]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Email"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Email]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[Email]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[Phone]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Phone"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Phone]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[Phone]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[CompanyType]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CompanyType"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Company Type]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[CompanyType]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[PositionTitle]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PositionTitle"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Position / Title]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[PositionTitle]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[MessageId]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MessageId"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[MessageId]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[Status]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Status"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Status]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[Status]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[IsProcessed]"
+                      cachedDataType="bool"
+                      cachedName="IsProcessed"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[IsProcessed]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[City]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[CompanyName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CompanyName"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Company Name]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[CompanyName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[PrimaryJobFunction]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PrimaryJobFunction"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Primary Job Function]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[PrimaryJobFunction]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[CommentOrQuestion]"
+                      cachedDataType="nText"
+                      cachedName="CommentOrQuestion"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Comment or Question]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[CommentOrQuestion]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[SentDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SentDate"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Date]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[SentDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      description="ID"
+                      name="ID">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">ID</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Email]"
+                      dataType="wstr"
+                      description="Email"
+                      length="255"
+                      name="Email">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">email</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[First Name]"
+                      dataType="wstr"
+                      description="First Name"
+                      length="255"
+                      name="First Name">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">First_x0020_Name</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Last Name]"
+                      dataType="wstr"
+                      description="Last Name"
+                      length="255"
+                      name="Last Name">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">Last_x0020_Name</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Company Mailing Address]"
+                      dataType="wstr"
+                      description="Company Mailing Address"
+                      length="255"
+                      name="Company Mailing Address">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">Company_x0020_Mailing_x0020_Addr</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[City]"
+                      dataType="wstr"
+                      description="City"
+                      length="255"
+                      name="City">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">City</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[State]"
+                      dataType="wstr"
+                      description="State"
+                      length="255"
+                      name="State">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">State</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Zip]"
+                      dataType="wstr"
+                      description="Zip"
+                      length="255"
+                      name="Zip">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">Zip</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Country]"
+                      dataType="wstr"
+                      description="Country"
+                      length="255"
+                      name="Country">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">Country</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Phone]"
+                      dataType="wstr"
+                      description="Phone"
+                      length="255"
+                      name="Phone">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">Phone</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Company Name]"
+                      dataType="wstr"
+                      description="Company Name"
+                      length="255"
+                      name="Company Name">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">Company_x0020_Name</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Company Type]"
+                      dataType="wstr"
+                      description="Company Type"
+                      length="255"
+                      name="Company Type">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">Company_x0020_Type</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Position / Title]"
+                      dataType="wstr"
+                      description="Position / Title"
+                      length="255"
+                      name="Position / Title">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">Position_x0020__x002f__x0020_Tit</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Primary Job Function]"
+                      dataType="wstr"
+                      description="Primary Job Function"
+                      length="255"
+                      name="Primary Job Function">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">Primary_x0020_Job_x0020_Function</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Comment or Question]"
+                      dataType="wstr"
+                      description="Comment or Question"
+                      length="255"
+                      name="Comment or Question">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">Comment_x0020_or_x0020_Question</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Status]"
+                      dataType="wstr"
+                      description="Status"
+                      length="255"
+                      name="Status">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">Status</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      description="Date"
+                      name="Date">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">Date</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Disposition Remark]"
+                      dataType="nText"
+                      description="Disposition Remark"
+                      name="Disposition Remark">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">Disposition_x0020_Remark</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Title]"
+                      dataType="wstr"
+                      description="Title"
+                      length="255"
+                      name="Title">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">Title</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[View]"
+                      dataType="wstr"
+                      description="View"
+                      length="255"
+                      name="View">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">View</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Content Type]"
+                      dataType="wstr"
+                      description="Content Type"
+                      length="4000"
+                      name="Content Type">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">ContentType</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Attachments]"
+                      dataType="bool"
+                      description="Attachments"
+                      name="Attachments">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">Attachments</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Status Lookup Choices]"
+                      dataType="wstr"
+                      description="Status Lookup Choices"
+                      length="255"
+                      name="Status Lookup Choices">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">Status_$$LookupChoices</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[ADO NET Source Output]"
+              endId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input]"
+              name="ADO NET Source Output"
+              startId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Data Flow Task"
+          TopLeft="616,115" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Data Flow Task\ADO NET Source"
+          TopLeft="489,159" />
+        <NodeLayout
+          Size="207,42"
+          Id="Package\Data Flow Task\SharePoint List Destination"
+          TopLeft="463,283" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[ADO NET Source Output]"
+          TopLeft="567.75,201">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,82"
+              Start="0,0"
+              End="0,74.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,74.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

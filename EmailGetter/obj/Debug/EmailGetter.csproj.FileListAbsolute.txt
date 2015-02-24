@@ -18,28 +18,29 @@ C:\Users\johnhoang\documents\visual studio 2013\Projects\EmailGetter\EmailGetter
 C:\Users\johnhoang\documents\visual studio 2013\Projects\EmailGetter\EmailGetter\bin\Debug\NLog.config
 C:\Users\johnhoang\documents\visual studio 2013\Projects\EmailGetter\EmailGetter\bin\Debug\NLog.dll
 C:\Users\johnhoang\documents\visual studio 2013\Projects\EmailGetter\EmailGetter\bin\Debug\NLog.xml
-D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\EmailGetter.exe.config
-D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\obj\Debug\EmailGetter.exe
-D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\obj\Debug\EmailGetter.pdb
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\NLog.config
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\EmailGetter.exe.config
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\EmailGetter.exe.manifest
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\EmailGetter.application
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\EmailGetter.exe
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\EmailGetter.pdb
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\CommandLine.dll
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\EmailGetter.Core.dll
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\EntityFramework.dll
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\EntityFramework.SqlServer.dll
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\NLog.dll
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\OpaqueMail.Net.dll
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\HtmlAgilityPack.dll
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\EmailGetter.Core.pdb
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\CommandLine.xml
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\EntityFramework.xml
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\EntityFramework.SqlServer.xml
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\NLog.xml
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\HtmlAgilityPack.pdb
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\HtmlAgilityPack.xml
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\obj\Debug\EmailGetter.csprojResolveAssemblyReference.cache
-D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\EmailGetter.exe.manifest
-D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\EmailGetter.application
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\obj\Debug\EmailGetter.exe.manifest
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\obj\Debug\EmailGetter.application
-D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\CommandLine.dll
-D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\CommandLine.xml
-D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\OpaqueMail.Net.dll
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\obj\Debug\EmailGetter.exe
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\obj\Debug\EmailGetter.pdb
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Debug\OpenPop.dll

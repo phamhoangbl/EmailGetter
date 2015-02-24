@@ -10,10 +10,10 @@ namespace EmailGetter
 {
     class Options
     {
-        [Option('t', "timeToRefesh", Required = true, HelpText = "Set time to refesh retrieving list email (miliseconds)")]
+        [Option('t', "timeToRefesh", Required = false, HelpText = "Set time to refesh retrieving list email (miliseconds)")]
         public int TimeToRefesh { get; set; }
 
-        [Option('f', "filePathDTS", Required = true,
+        [Option('f', "filePathDTS", Required = false,
         HelpText = @"Input directory path DTS DTExec.exe to be processed or input 'd' (Default: 'C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\)'")]
         public string FilePathDTS { get; set; }
 

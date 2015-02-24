@@ -23,3 +23,4 @@ D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Debug\HtmlAgili
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\bin\Debug\HtmlAgilityPack.xml
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\obj\Debug\EmailGetter.Core.dll
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\obj\Debug\EmailGetter.Core.pdb
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter.Core\obj\Debug\EmailGetter.Core.csprojResolveAssemblyReference.cache

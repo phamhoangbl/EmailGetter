@@ -1,10 +1,4 @@
-D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\EmailGetter.exe.config
-D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\obj\Release\EmailGetter.csprojResolveAssemblyReference.cache
-D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\NLog.config
-D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\EmailGetter.exe.manifest
-D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\EmailGetter.application
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\EmailGetter.exe
-D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\EmailGetter.pdb
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\CommandLine.dll
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\EmailGetter.Core.dll
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\EntityFramework.dll
@@ -12,6 +6,9 @@ D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\EntityFramew
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\NLog.dll
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\OpaqueMail.Net.dll
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\HtmlAgilityPack.dll
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\EmailGetter.exe.config
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\obj\Release\EmailGetter.exe
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\obj\Release\EmailGetter.pdb
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\EmailGetter.Core.pdb
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\CommandLine.xml
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\EntityFramework.xml
@@ -19,7 +16,10 @@ D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\EntityFramew
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\NLog.xml
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\HtmlAgilityPack.pdb
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\HtmlAgilityPack.xml
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\obj\Release\EmailGetter.csprojResolveAssemblyReference.cache
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\obj\Release\EmailGetter.exe.manifest
 D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\obj\Release\EmailGetter.application
-D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\obj\Release\EmailGetter.exe
-D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\obj\Release\EmailGetter.pdb
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\NLog.config
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\EmailGetter.exe.manifest
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\EmailGetter.application
+D:\Virtium\Projects\EmailGetter\EmailGetter\EmailGetter\bin\Release\EmailGetter.pdb
