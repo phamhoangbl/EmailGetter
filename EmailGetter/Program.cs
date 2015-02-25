@@ -119,7 +119,7 @@ namespace EmailGetter
                 throw ex;
             }
 
-            var contactFormMessages = recentMessages.Where(x => x.Headers.Subject.Contains(emailTitle));
+            var contactFormMessages = recentMessages.Where(x => x.Headers.Subject == emailTitle);
 
             foreach (var contactFormMessage in contactFormMessages)
             {

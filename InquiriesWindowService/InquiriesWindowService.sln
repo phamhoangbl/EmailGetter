@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InquiriesWindowService", "InquiriesWindowService\InquiriesWindowService.csproj", "{8F6EF4E3-0BB4-4E9F-A0C1-EE8D58E39EE6}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "InquiriesWindowSetup", "InquiriesWindowSetup\InquiriesWindowSetup.vdproj", "{C7EC1FC0-D249-4B9F-88BD-38B0AC7DB375}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F6EF4E3-0BB4-4E9F-A0C1-EE8D58E39EE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F6EF4E3-0BB4-4E9F-A0C1-EE8D58E39EE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F6EF4E3-0BB4-4E9F-A0C1-EE8D58E39EE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F6EF4E3-0BB4-4E9F-A0C1-EE8D58E39EE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7EC1FC0-D249-4B9F-88BD-38B0AC7DB375}.Debug|Any CPU.ActiveCfg = Debug
+		{C7EC1FC0-D249-4B9F-88BD-38B0AC7DB375}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
