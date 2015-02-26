@@ -17,3 +17,14 @@ C:\Users\johnhoang\Desktop\InquiriesWindowService\InquiriesWindowService\bin\Deb
 C:\Users\johnhoang\Desktop\InquiriesWindowService\InquiriesWindowService\bin\Debug\InquiriesWindowService.application
 C:\Users\johnhoang\Desktop\InquiriesWindowService\InquiriesWindowService\obj\Debug\InquiriesWindowService.exe.manifest
 C:\Users\johnhoang\Desktop\InquiriesWindowService\InquiriesWindowService\obj\Debug\InquiriesWindowService.application
+D:\Virtium\Projects\EmailGetter\EmailGetter\InquiriesWindowService\InquiriesWindowService\bin\Debug\InquiriesWindowService.exe.config
+D:\Virtium\Projects\EmailGetter\EmailGetter\InquiriesWindowService\InquiriesWindowService\bin\Debug\InquiriesWindowService.exe.manifest
+D:\Virtium\Projects\EmailGetter\EmailGetter\InquiriesWindowService\InquiriesWindowService\bin\Debug\InquiriesWindowService.application
+D:\Virtium\Projects\EmailGetter\EmailGetter\InquiriesWindowService\InquiriesWindowService\bin\Debug\InquiriesWindowService.exe
+D:\Virtium\Projects\EmailGetter\EmailGetter\InquiriesWindowService\InquiriesWindowService\bin\Debug\InquiriesWindowService.pdb
+D:\Virtium\Projects\EmailGetter\EmailGetter\InquiriesWindowService\InquiriesWindowService\obj\Debug\InquiriesWindowService.ProjectInstaller.resources
+D:\Virtium\Projects\EmailGetter\EmailGetter\InquiriesWindowService\InquiriesWindowService\obj\Debug\InquiriesWindowService.csproj.GenerateResource.Cache
+D:\Virtium\Projects\EmailGetter\EmailGetter\InquiriesWindowService\InquiriesWindowService\obj\Debug\InquiriesWindowService.exe.manifest
+D:\Virtium\Projects\EmailGetter\EmailGetter\InquiriesWindowService\InquiriesWindowService\obj\Debug\InquiriesWindowService.application
+D:\Virtium\Projects\EmailGetter\EmailGetter\InquiriesWindowService\InquiriesWindowService\obj\Debug\InquiriesWindowService.exe
+D:\Virtium\Projects\EmailGetter\EmailGetter\InquiriesWindowService\InquiriesWindowService\obj\Debug\InquiriesWindowService.pdb

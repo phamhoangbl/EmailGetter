@@ -90,17 +90,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="EmailGetterApp\EmailGetter.bat" />
-    <None Include="EmailGetterApp\EmailGetter.exe.config" />
-    <None Include="EmailGetterApp\NLog.config" />
-    <None Include="EmailGetterApp\SPImport\bin\Development\SPImport.ispac" />
-    <None Include="EmailGetterApp\SPImport\obj\Development\Package.dtsx" />
-    <None Include="EmailGetterApp\SPImport\obj\Development\Project.params" />
-    <None Include="EmailGetterApp\SPImport\obj\Development\SPImport.dtproj" />
-    <None Include="EmailGetterApp\SPImport\Package.dtsx" />
-    <None Include="EmailGetterApp\SPImport\Project.params" />
-    <None Include="EmailGetterApp\SPImport\SPImport.database" />
-    <None Include="EmailGetterApp\SPImport\SPImport.dtproj" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ProjectInstaller.resx">
@@ -123,19 +112,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="EmailGetterApp\CommandLine.dll" />
-    <Content Include="EmailGetterApp\EmailGetter.Core.dll" />
-    <Content Include="EmailGetterApp\EmailGetter.exe" />
-    <Content Include="EmailGetterApp\EntityFramework.dll" />
-    <Content Include="EmailGetterApp\EntityFramework.SqlServer.dll" />
-    <Content Include="EmailGetterApp\HtmlAgilityPack.dll" />
-    <Content Include="EmailGetterApp\NLog.dll" />
-    <Content Include="EmailGetterApp\OpaqueMail.Net.dll" />
-    <Content Include="EmailGetterApp\OpenPop.dll" />
-    <Content Include="EmailGetterApp\SPImport\obj\Development\BuildLog.xml" />
-    <Content Include="EmailGetterApp\SPImport\SPImport.dtproj.user" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

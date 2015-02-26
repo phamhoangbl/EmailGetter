@@ -14,12 +14,19 @@ namespace InquiriesWindowService
         /// </summary>
         static void Main()
         {
+//#if DEBUG
+//            Scheduler myScheduler = new Scheduler();
+//            myScheduler.OnDebug();
+//#else
             ServiceBase[] ServicesToRun;
+
             ServicesToRun = new ServiceBase[] 
             { 
                 new Scheduler() 
             };
             ServiceBase.Run(ServicesToRun);
+//#endif
+
         }
     }
 }

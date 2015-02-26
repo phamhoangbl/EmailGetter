@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Security;
 using System.ServiceProcess;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 
@@ -13,32 +16,54 @@ namespace InquiriesWindowService
 {
     public partial class Scheduler : ServiceBase
     {
-        private Timer timer1 = null;
+        private const string appName = "InquiriesWindowService.exe";
+        private Process _process;
 
         public Scheduler()
         {
             InitializeComponent();
         }
 
-        protected override void OnStart(string[] args)
+        public void OnDebug()
         {
-            timer1 = new Timer();
-            this.timer1.Interval = 5000; //every 30 secs
-            this.timer1.Elapsed += new System.Timers.ElapsedEventHandler(this.timer1_Tick);
-            timer1.Enabled = true;
-            Library.WriteErrorLog("Test window service started");
+            OnStart(null);
         }
 
-        private void timer1_Tick(object sender, ElapsedEventArgs e)
+        protected override void OnStart(string[] args)
         {
-            //Write code here to do some job depends on your requirement
-            Library.WriteErrorLog("Timer ticked and some job has been done successfully");
+            string sourcePath = Environment.GetCommandLineArgs()[0].Replace(appName, "").Replace("InquiriesWindowService.vshost.exe", "");
+            string fileName = sourcePath + "Source\\" + "EmailGetter.exe";
+            //Library.WriteErrorLog(fileName);
+
+            //Create process
+            ProcessStartInfo startinfo = new ProcessStartInfo();
+
+            startinfo.UseShellExecute = false;
+            startinfo.CreateNoWindow = true;
+            startinfo.FileName = fileName;
+            startinfo.WindowStyle = ProcessWindowStyle.Hidden;
+
+            //Get program output
+            _process = Process.Start(startinfo);
+        }
+
+        public static SecureString GetSecureString(string str)
+        {
+            SecureString secureString = new SecureString();
+            foreach (char ch in str)
+            {
+                secureString.AppendChar(ch);
+            }
+            secureString.MakeReadOnly();
+            return secureString;
         }
 
         protected override void OnStop()
         {
-            timer1.Enabled = false;
-            Library.WriteErrorLog("Test window service stopped");
+            _process.Kill();
+            //Library.WriteErrorLog("End call email getter bat");
+            //TO DO Write log
+            //Library.WriteErrorLog("Test window service stopped");
         }
     }
 }
