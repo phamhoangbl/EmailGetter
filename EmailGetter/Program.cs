@@ -210,11 +210,15 @@ namespace EmailGetter
             startinfo.CreateNoWindow = true;
             startinfo.WindowStyle = ProcessWindowStyle.Hidden;
 
-            //string dirSPImport = AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug", "") + @"SPImport\";
-            string dirSPImport = AppDomain.CurrentDomain.BaseDirectory + @"SPImport\";
+            string dirSPImport = AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug", "") + @"SPImport\";
+            //string dirSPImport = AppDomain.CurrentDomain.BaseDirectory + @"SPImport\";
+
             startinfo.FileName = string.Format("{0}", _directoryDTS + _commandDTS);
-            startinfo.Arguments =  " /f " + dirSPImport + _fileDTS;
+            startinfo.Arguments =  string.Format("/f \"{0}\"", dirSPImport + _fileDTS);
             startinfo.RedirectStandardOutput = true;
+
+
+            _logger.Info("DTS File name + argurments: " + startinfo.FileName + " " + startinfo.Arguments);
 
             Process p = Process.Start(startinfo);
 

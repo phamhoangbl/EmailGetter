@@ -9,34 +9,27 @@ namespace InquiriesWindowService
 {
     public static class Library
     {
-        public static void WriteErrorLog(Exception ex)
-        {
-            StreamWriter sw = null;
-            try
-            {
-                sw = new StreamWriter("D:\\LogFile.txt", true);
-                sw.WriteLine(DateTime.Now.ToString() + ": " + ex.Source.ToString().Trim() + "; " + ex.Message.ToString().Trim());
-                sw.Flush();
-                sw.Close();
-            }
-            catch
-            {
-            }
-        }
+        private static string logFilePath = "C:\\logs";
+        private static string logFileName = "C:\\logs\\InstallerEmailGetter.txt";
+        //public static void WriteErrorLog(Exception ex)
+        //{
+        //    StreamWriter sw = null;
+        //    try
+        //    {
 
-        public static void WriteErrorLog(string Message)
+        //        sw = new StreamWriter(logFile, true);
+        //        sw.WriteLine(DateTime.Now.ToString() + ": " + ex.Source.ToString().Trim() + "; " + ex.Message.ToString().Trim());
+        //        sw.Flush();
+        //        sw.Close();
+        //    }
+        //    catch
+        //    {
+        //    }
+        //}
+
+        public static void WriteErrorLog(string message)
         {
-            StreamWriter sw = null;
-            try
-            {
-                sw = new StreamWriter("D:\\LogFile.txt", true);
-                sw.WriteLine(DateTime.Now.ToString() + ": " + Message);
-                sw.Flush();
-                sw.Close();
-            }
-            catch
-            {
-            }
+            FileHelper.WriteFile(logFileName, message, logFilePath);
         }
     }
 }

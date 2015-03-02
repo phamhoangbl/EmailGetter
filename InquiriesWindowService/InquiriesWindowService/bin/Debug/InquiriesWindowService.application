@@ -7,14 +7,14 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="InquiriesWindowService.exe.manifest" size="3541">
+    <dependentAssembly dependencyType="install" codebase="InquiriesWindowService.exe.manifest" size="3542">
       <assemblyIdentity name="InquiriesWindowService.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>o+VG32WLLFG93B10xmWgnTIv775TALOs6LXD7DAP+iU=</dsig:DigestValue>
+        <dsig:DigestValue>U2pxw1LivfcIsG2q5UkhCxcZYPHpXUdwQ8Y7dxwgesY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

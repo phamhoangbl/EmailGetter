@@ -11,23 +11,23 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{C43B04D9-CE0B-4FD7-B826-409BF2FD8395}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{C46B72B5-DF22-4EB8-9EF2-55BBF1FCFB22}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[JOHNHOANG-PC.PhoSharePoint.testuser]"
+      DTS:refId="Package.ConnectionManagers[PRDVTSQL00.VtExtranet.theXTeam]"
       DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
-      DTS:DTSID="{7E86B5AE-D1EC-4C16-9DA7-68E350B72535}"
-      DTS:ObjectName="JOHNHOANG-PC.PhoSharePoint.testuser">
+      DTS:DTSID="{97CC4A98-95DE-41FA-957C-B18538B975CB}"
+      DTS:ObjectName="PRDVTSQL00.VtExtranet.theXTeam">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=JOHNHOANG-PC;User ID=testuser;Initial Catalog=PhoSharePoint;Persist Security Info=True;Application Name=SSIS-Package-{7E86B5AE-D1EC-4C16-9DA7-68E350B72535}JOHNHOANG-PC.PhoSharePoint.testuser;">
+          DTS:ConnectionString="Data Source=PRDVTSQL00;User ID=theXTeam;Initial Catalog=VtExtranet;Persist Security Info=True;Application Name=SSIS-Package-{97CC4A98-95DE-41FA-957C-B18538B975CB}PRDVTSQL00.VtExtranet.theXTeam;">
           <DTS:Password
             DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfRG+Se2V8UiobbWpeL9f9wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAOtyEwmrUVXOvbMElX8skA1DzE5gjZseI9esVRWEWB+gAAAAAOgAAAAAIAACAAAABQfVlGsoeuhM+CljAe+O2fEHQ52f/JQcHnnRlM8DLquRAAAACTBIyxWDg3LLr+t9sq/Y7+QAAAAInH0+GyP3gW5Vs2w/O4G2+8f/3QmTnm8eIPS55h7QQ6s66PjQo/XWX0V5oD0DF64cNhKMP4IohgyH1F8de9H5M</DTS:Password>
+            Sensitive="1">1nqu3ryX</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -72,7 +72,7 @@
                   expressionType="Notify"
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT     ContactFormId, FirstName, LastName, CompanyEmail, City, State, Zip, Country, Email, Phone, CompanyName, CompanyType, PositionTitle, PrimaryJobFunction, 
-                      CommentOrQuestion, SentDate, MessageId, Status, IsProcessed
+                      CommentOrQuestion, SentDate, Status
 FROM         ContactForms
 WHERE     (IsProcessed = 0)</property>
                 <property
@@ -88,7 +88,7 @@ WHERE     (IsProcessed = 0)</property>
                   description="The Source database table name."
                   expressionType="Notify"
                   name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version= 11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">"dbo"."ContactForms"</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version= 11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specify the mode to retrieve external column information"
@@ -101,8 +101,8 @@ WHERE     (IsProcessed = 0)</property>
               <connections>
                 <connection
                   refId="Package\Data Flow Task\ADO NET Source.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[JOHNHOANG-PC.PhoSharePoint.testuser]"
-                  connectionManagerRefId="Package.ConnectionManagers[JOHNHOANG-PC.PhoSharePoint.testuser]"
+                  connectionManagerID="Package.ConnectionManagers[PRDVTSQL00.VtExtranet.theXTeam]"
+                  connectionManagerRefId="Package.ConnectionManagers[PRDVTSQL00.VtExtranet.theXTeam]"
                   description="Managed connection manager"
                   name="IDbConnection" />
               </connections>
@@ -269,16 +269,6 @@ WHERE     (IsProcessed = 0)</property>
                       name="SentDate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[MessageId]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MessageId]"
-                      length="255"
-                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[MessageId]"
-                      name="MessageId"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[Status]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -287,15 +277,6 @@ WHERE     (IsProcessed = 0)</property>
                       length="15"
                       lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[Status]"
                       name="Status"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[IsProcessed]"
-                      dataType="bool"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[IsProcessed]"
-                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[IsProcessed]"
-                      name="IsProcessed"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -378,19 +359,10 @@ WHERE     (IsProcessed = 0)</property>
                       dataType="dbTimeStamp"
                       name="SentDate" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[MessageId]"
-                      dataType="wstr"
-                      length="255"
-                      name="MessageId" />
-                    <externalMetadataColumn
                       refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[Status]"
                       dataType="wstr"
                       length="15"
                       name="Status" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[IsProcessed]"
-                      dataType="bool"
-                      name="IsProcessed" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -492,22 +464,11 @@ WHERE     (IsProcessed = 0)</property>
                       lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[SentDate]"
                       name="SentDate" />
                     <outputColumn
-                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MessageId]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[MessageId]"
-                      name="MessageId" />
-                    <outputColumn
                       refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Status]"
                       dataType="wstr"
                       length="15"
                       lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[Status]"
                       name="Status" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[IsProcessed]"
-                      dataType="bool"
-                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[IsProcessed]"
-                      name="IsProcessed" />
                     <outputColumn
                       refId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -538,17 +499,17 @@ WHERE     (IsProcessed = 0)</property>
                   dataType="System.String"
                   description="Path to SharePoint site that contains the list."
                   expressionType="Notify"
-                  name="SiteUrl">http://inside.virtium.com/phosapps/</property>
+                  name="SiteUrl">http://flash/sales/Private</property>
                 <property
                   dataType="System.String"
                   description="Name of the SharePoint list to load data from."
                   expressionType="Notify"
-                  name="SiteListName">Contact Form List</property>
+                  name="SiteListName">Inquiries</property>
                 <property
                   dataType="System.String"
                   description="Name of the view within SharePoint list to load data from."
                   expressionType="Notify"
-                  name="SiteListViewName">ContactFormListView</property>
+                  name="SiteListViewName">Inquiries View</property>
                 <property
                   dataType="System.String"
                   description="Culture to use when communicating with remote SharePoint Server (en-US)."
@@ -580,7 +541,7 @@ WHERE     (IsProcessed = 0)</property>
               <inputs>
                 <input
                   refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input]"
-                  description="Contact Form List"
+                  description="Inquiries"
                   hasSideEffects="true"
                   name="Component Input">
                   <inputColumns>
@@ -608,8 +569,15 @@ WHERE     (IsProcessed = 0)</property>
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="CompanyEmail"
-                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Company Mailling Address]"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Company Mailing Address]"
                       lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[CompanyEmail]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[City]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[City]" />
                     <inputColumn
                       refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[State]"
                       cachedDataType="wstr"
@@ -646,50 +614,6 @@ WHERE     (IsProcessed = 0)</property>
                       externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Phone]"
                       lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[Phone]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[PrimaryJobFunction]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="PrimaryJobFunction"
-                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Primary Job Function]"
-                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[PrimaryJobFunction]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[CommentOrQuestion]"
-                      cachedDataType="nText"
-                      cachedName="CommentOrQuestion"
-                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Comment or Question]"
-                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[CommentOrQuestion]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[SentDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="SentDate"
-                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Sent Date]"
-                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[SentDate]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[MessageId]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="MessageId"
-                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[MessageId]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[Status]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
-                      cachedName="Status"
-                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Status]"
-                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[Status]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[IsProcessed]"
-                      cachedDataType="bool"
-                      cachedName="IsProcessed"
-                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[IsProcessed]" />
-                    <inputColumn
-                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[City]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="City"
-                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[City]"
-                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[City]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[CompanyName]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -708,8 +632,34 @@ WHERE     (IsProcessed = 0)</property>
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="PositionTitle"
-                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Position/ Title]"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Position / Title]"
                       lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[PositionTitle]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[PrimaryJobFunction]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PrimaryJobFunction"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Primary Job Function]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[PrimaryJobFunction]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[CommentOrQuestion]"
+                      cachedDataType="nText"
+                      cachedName="CommentOrQuestion"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Comment or Question]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[CommentOrQuestion]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[SentDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="SentDate"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Date]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[SentDate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].Columns[Status]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Status"
+                      externalMetadataColumnId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Status]"
+                      lineageId="Package\Data Flow Task\ADO NET Source.Outputs[ADO NET Source Output].Columns[Status]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -735,7 +685,7 @@ WHERE     (IsProcessed = 0)</property>
                         <property
                           dataType="System.String"
                           description="SharePoint ID"
-                          name="Id">FromEmail</property>
+                          name="Id">email</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
@@ -748,7 +698,7 @@ WHERE     (IsProcessed = 0)</property>
                         <property
                           dataType="System.String"
                           description="SharePoint ID"
-                          name="Id">FirstName</property>
+                          name="Id">First_x0020_Name</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
@@ -765,16 +715,16 @@ WHERE     (IsProcessed = 0)</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Company Mailling Address]"
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Company Mailing Address]"
                       dataType="wstr"
-                      description="Company Mailling Address"
+                      description="Company Mailing Address"
                       length="255"
-                      name="Company Mailling Address">
+                      name="Company Mailing Address">
                       <properties>
                         <property
                           dataType="System.String"
                           description="SharePoint ID"
-                          name="Id">Mailing_x0020_Address</property>
+                          name="Id">Company_x0020_Mailing_x0020_Addr</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
@@ -852,7 +802,7 @@ WHERE     (IsProcessed = 0)</property>
                         <property
                           dataType="System.String"
                           description="SharePoint ID"
-                          name="Id">CompanyName</property>
+                          name="Id">Company_x0020_Name</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
@@ -865,20 +815,20 @@ WHERE     (IsProcessed = 0)</property>
                         <property
                           dataType="System.String"
                           description="SharePoint ID"
-                          name="Id">CompanyType</property>
+                          name="Id">Company_x0020_Type</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Position/ Title]"
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Position / Title]"
                       dataType="wstr"
-                      description="Position/ Title"
+                      description="Position / Title"
                       length="255"
-                      name="Position/ Title">
+                      name="Position / Title">
                       <properties>
                         <property
                           dataType="System.String"
                           description="SharePoint ID"
-                          name="Id">PositionTitle</property>
+                          name="Id">Position_x0020__x002f__x0020_Tit</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
@@ -891,19 +841,20 @@ WHERE     (IsProcessed = 0)</property>
                         <property
                           dataType="System.String"
                           description="SharePoint ID"
-                          name="Id">PrimaryJob</property>
+                          name="Id">Primary_x0020_Job_x0020_Function</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Comment or Question]"
-                      dataType="nText"
+                      dataType="wstr"
                       description="Comment or Question"
+                      length="255"
                       name="Comment or Question">
                       <properties>
                         <property
                           dataType="System.String"
                           description="SharePoint ID"
-                          name="Id">Comment_x0020_Or_x0020_Question</property>
+                          name="Id">Comment_x0020_or_x0020_Question</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
@@ -916,19 +867,44 @@ WHERE     (IsProcessed = 0)</property>
                         <property
                           dataType="System.String"
                           description="SharePoint ID"
-                          name="Id">IsClosed</property>
+                          name="Id">Status</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Sent Date]"
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Date]"
                       dataType="dbTimeStamp"
-                      description="Sent Date"
-                      name="Sent Date">
+                      description="Date"
+                      name="Date">
                       <properties>
                         <property
                           dataType="System.String"
                           description="SharePoint ID"
-                          name="Id">Sent_x0020_Date</property>
+                          name="Id">Date</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Disposition Remark]"
+                      dataType="nText"
+                      description="Disposition Remark"
+                      name="Disposition Remark">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">Disposition_x0020_Remark</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SharePoint List Destination.Inputs[Component Input].ExternalColumns[Title]"
+                      dataType="wstr"
+                      description="Title"
+                      length="255"
+                      name="Title">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="SharePoint ID"
+                          name="Id">Title</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
@@ -941,7 +917,7 @@ WHERE     (IsProcessed = 0)</property>
                         <property
                           dataType="System.String"
                           description="SharePoint ID"
-                          name="Id">Title</property>
+                          name="Id">View</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
@@ -979,7 +955,7 @@ WHERE     (IsProcessed = 0)</property>
                         <property
                           dataType="System.String"
                           description="SharePoint ID"
-                          name="Id">IsClosed_$$LookupChoices</property>
+                          name="Id">Status_$$LookupChoices</property>
                       </properties>
                     </externalMetadataColumn>
                   </externalMetadataColumns>
@@ -1023,27 +999,27 @@ WHERE     (IsProcessed = 0)</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="207,42"
-          Id="Package\Data Flow Task\SharePoint List Destination"
-          TopLeft="472,281" />
-        <NodeLayout
           Size="160,42"
           Id="Package\Data Flow Task\ADO NET Source"
-          TopLeft="489,159" />
+          TopLeft="436,75" />
+        <NodeLayout
+          Size="207,42"
+          Id="Package\Data Flow Task\SharePoint List Destination"
+          TopLeft="413,173" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[ADO NET Source Output]"
-          TopLeft="572.25,201">
+          TopLeft="516.25,117">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,80"
+              EndConnector="0,56"
               Start="0,0"
-              End="0,72.5">
+              End="0,48.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,72.5" />
+                    End="0,48.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

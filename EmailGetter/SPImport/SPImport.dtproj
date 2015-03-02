@@ -12,11 +12,11 @@
   <DataSourceViews />
   <DeploymentModelSpecificContent>
     <Manifest>
-      <SSIS:Project SSIS:ProtectionLevel="EncryptSensitiveWithUserKey" xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
+      <SSIS:Project SSIS:ProtectionLevel="DontSaveSensitive" xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
         <SSIS:Properties>
           <SSIS:Property SSIS:Name="ID">{2181004a-ec7a-485b-b903-8084a0218bc8}</SSIS:Property>
           <SSIS:Property SSIS:Name="Name">SPImport</SSIS:Property>
-          <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+          <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionComments">
@@ -26,7 +26,6 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">JOHNHOANG-PC</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAfRG+Se2V8UiobbWpeL9f9wAAAAACAAAAAAAQZgAAAAEAACAAAAA3Hn/V/gVTu8Gq3VQk1UUBzn5CTPFPHE+UWSkjRc1jVgAAAAAOgAAAAAIAACAAAAA0e9ggkHvbeHa+/X2SiJHeU7xFhX2KUOkqJSUHxLjZ7pAAAABjjnoe5Aa8cz5j0YWoZu/VFkg1u14bmMn9YES4IOUEZVgML/MOVcX0Km1DlMiQvxGIj7lmLAeFqlpPtyl0pkg+PrwJq15QgQhZKSuxyhvE9TFgnHfvHxGMDUel5r3AhDnkc4HB3Y85bQwFxNmWR4lMFJRO11fpkD8o2HwkaZHJ31b7RrfXzUsQZwwhrbRTcaNAAAAAAwOjkh4Ouwt9wW0TnIIneXOikeJVLwrzxMMI1D/WDWxHgld3C7KST+35JoNMMvdOhKSXvmMNbWf6paBDZyf86w==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -42,17 +41,17 @@
                 <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">32</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{91D17E3B-8A56-43AF-9436-1A2436EE5ACE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{C75E62D4-C8D9-4015-934C-8DF4D331D859}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
               </SSIS:Properties>
               <SSIS:Parameters>
-                <SSIS:Parameter SSIS:Name="CM.JOHNHOANG-PC.PhoSharePoint.testuser.ConnectionString">
+                <SSIS:Parameter SSIS:Name="CM.PRDVTSQL00.VtExtranet.theXTeam.ConnectionString">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -63,11 +62,11 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Data Source=JOHNHOANG-PC;User ID=testuser;Initial Catalog=PhoSharePoint;Persist Security Info=True;Application Name=SSIS-Package-{7E86B5AE-D1EC-4C16-9DA7-68E350B72535}JOHNHOANG-PC.PhoSharePoint.testuser;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=PRDVTSQL00;User ID=theXTeam;Initial Catalog=VtExtranet;Persist Security Info=True;Application Name=SSIS-Package-{97CC4A98-95DE-41FA-957C-B18538B975CB}PRDVTSQL00.VtExtranet.theXTeam;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.JOHNHOANG-PC.PhoSharePoint.testuser.InitialCatalog">
+                <SSIS:Parameter SSIS:Name="CM.PRDVTSQL00.VtExtranet.theXTeam.InitialCatalog">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -78,11 +77,11 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">PhoSharePoint</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">VtExtranet</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.JOHNHOANG-PC.PhoSharePoint.testuser.Password">
+                <SSIS:Parameter SSIS:Name="CM.PRDVTSQL00.VtExtranet.theXTeam.Password">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -96,7 +95,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.JOHNHOANG-PC.PhoSharePoint.testuser.RetainSameConnection">
+                <SSIS:Parameter SSIS:Name="CM.PRDVTSQL00.VtExtranet.theXTeam.RetainSameConnection">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -111,7 +110,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.JOHNHOANG-PC.PhoSharePoint.testuser.ServerName">
+                <SSIS:Parameter SSIS:Name="CM.PRDVTSQL00.VtExtranet.theXTeam.ServerName">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -122,11 +121,11 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">JOHNHOANG-PC</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">PRDVTSQL00</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.JOHNHOANG-PC.PhoSharePoint.testuser.UserName">
+                <SSIS:Parameter SSIS:Name="CM.PRDVTSQL00.VtExtranet.theXTeam.UserName">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -137,7 +136,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">testuser</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">theXTeam</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>

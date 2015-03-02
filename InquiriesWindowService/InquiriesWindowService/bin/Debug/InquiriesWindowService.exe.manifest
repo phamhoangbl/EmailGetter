@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="InquiriesWindowService.exe" size="9192">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="InquiriesWindowService.exe" size="10728">
       <assemblyIdentity name="InquiriesWindowService" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>YGF3qRuP70lcty6m6qO3HULouHdcDioCvJsKklxBVfM=</dsig:DigestValue>
+        <dsig:DigestValue>xLOpeObqPKOBtsZSf7fm6tom008TX8JdnP+K9DweyoU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

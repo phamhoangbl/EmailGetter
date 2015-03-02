@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EmailGetter.exe" size="12800">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EmailGetter.exe" size="13800">
       <assemblyIdentity name="EmailGetter" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UNsk8CDSeqOW+azKF2m3AUFivITJqg8gVuG+IEHKVnM=</dsig:DigestValue>
+        <dsig:DigestValue>EOOFs8jQY6X8M0Gr4pv74gpGIesGV5gvzHCan5KoQbc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2oRBbnEV2wIpdK0qJL8VzbZDIMAFjffWzSjoSFlH9Jk=</dsig:DigestValue>
+        <dsig:DigestValue>4RY3n2+Pfi0dG52ciFo6gdmC8DsmsyXJpok0L8PAAZc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -176,13 +176,13 @@
       <dsig:DigestValue>q4XAVHvk7QME+7jcUViL//s6NUWeir2LLLJ3w417d+c=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SPImport\obj\Development\BuildLog.xml" size="643" writeableType="applicationData">
+  <file name="SPImport\obj\Development\BuildLog.xml" size="623" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>aq40OjL1r82rtvh/+aWfGqMFp8IMwrcq/jEzYxF3JO0=</dsig:DigestValue>
+      <dsig:DigestValue>RNuatvJK8Gpbvw6VOyYL7gitWOgJEjAwUqWd0/zTdgk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="SPImport\SPImport.dtproj.user" size="892">

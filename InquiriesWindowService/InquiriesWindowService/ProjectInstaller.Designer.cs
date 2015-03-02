@@ -42,6 +42,7 @@
             this.serviceInstaller1.ServiceName = "Virtium Inquiries Window Service";
             this.serviceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             this.serviceInstaller1.AfterInstall += new System.Configuration.Install.InstallEventHandler(this.serviceInstaller1_AfterInstall);
+            this.serviceInstaller1.AfterUninstall += new System.Configuration.Install.InstallEventHandler(this.serviceInstaller1_AfterUninstall);
             // 
             // ProjectInstaller
             // 
